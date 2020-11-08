@@ -5,7 +5,12 @@ window.onload = () =>{
   $(document).ready(function(){
     initMaterialize()
 
-    window.ui = new Ui();
+    let ui = new Ui();
+    ui.inventory.newAddProduct([123, 'Queso', 'Es queso', 2, 30])
+    ui.inventory.newAddProduct([543, 'Carro', 'Es carro', 1, 1000])
+    ui.inventory.newAddProduct([222, 'Nuez', 'Es nuez', 2, 10])
+
+    ui._getProductsHtmlNodes(ui.inventory._getProductsList())
   });
 }
 

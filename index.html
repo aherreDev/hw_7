@@ -53,6 +53,12 @@
       <div class="col s4 mb-4 flex-centered">
         <a id="mposition" href="#position" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">add_task</i>Add to position</a>
       </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="mdeletefirst" href="#get_0" class="waves-effect waves-light btn-large sort"><i class="material-icons left">add</i>Delete first</a>
+      </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="maddfirst" href="#addFirst" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">add</i>Create product (First)</a>
+      </div>
     </div>
 
     <div>
@@ -72,6 +78,47 @@
       <form id="add_form" action="#">
         <div class="modal-content">
           <h4>Add Product</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="code" name="code" class="validate" required />
+                  <label for="code">Product code</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="name" name="name" class="input-field validate" required />
+                  <label for="name">Product Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <textarea id="description" name="description" class="materialize-textarea validate" required></textarea>
+                  <label for="description">Product Description</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6 input-field">
+                  <input id="amount" name="amount" class="validate" type="number" required />
+                  <label for="amount">Product Amount</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">payments</i>
+                  <input id="price" name="price" class="validate" type="number" required />
+                  <label for="price">Product Price</label>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="waves-effect waves-light btn-large" type="submit" >Add product</button>
+          <button id="add_modal_close" href="#!" class="modal-close waves-effect waves-green btn-flat is-hidden">Agree</button>
+        </div>
+      </form>
+    </div>
+    <div id="addFirst" class="modal">
+      <form id="add_first_form" action="#">
+        <div class="modal-content">
+          <h4>Add Product To First Position</h4>
           <div class="row">
             <form class="col s12">
               <div class="row">
