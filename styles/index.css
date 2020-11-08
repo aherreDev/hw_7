@@ -1,0 +1,34 @@
+@import "./bulma-helpers.css";
+@import "./variables.css";
+
+main{
+  min-height: calc(100vh - 80px);
+}
+body > .container {
+  /*min-height: calc(100vh - (5rem + 80px));*/
+}
+nav .nav-wrapper i, nav a.sidenav-trigger i{
+  font-size: 3rem;
+}
+
+
+/* BACKGROUNDS */
+.has-background-light{
+  background-color: var(--light);
+}
+.has-background-white{
+  background-color: var(--white);
+}
+
+/* Flex */
+.flex-centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* TEXT */
+.separator{
+  border-bottom: 2px solid var(--light);
+}

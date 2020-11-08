@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hw 6</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/index.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body class="has-background-light">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">
+        <i class="medium material-icons ml-3 mr-0">shopping_cart</i>
+        <strong class="brand">
+          UShop.com
+        </strong>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Product operations</a></li>
+        <li><a href="badges.html">My products</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container has-background-white my-2 px-5 py-1">
+    <h2 class="is-size-2 mb-6 separator">
+      Product actions
+    </h2>
+    <div class="row">
+      <div class="col s4 mb-4 flex-centered">
+        <a id="madd" href="#add" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">add</i>Create product</a>
+      </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="mdel" href="#del" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">add</i>Delete product</a>
+      </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="msearch" href="#search" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">search</i>Search by product code</a>
+      </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="mget_1" href="#get_1" class="waves-effect waves-light btn-large sort"><i class="material-icons left">list</i>List products (ASC)</a>
+      </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="mget_0" href="#get_0" class="waves-effect waves-light btn-large sort"><i class="material-icons left">list</i>List products (DSC)</a>
+      </div>
+      <div class="col s4 mb-4 flex-centered">
+        <a id="mposition" href="#position" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">add_task</i>Add to position</a>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="is-size-2 mb-6 separator">
+
+        Results
+      </h2>
+    </div>
+    <div id="products_list" class="row">
+
+    </div>
+  </div>
+
+  <!--MODALS-->
+  <div>
+    <div id="add" class="modal">
+      <form id="add_form" action="#">
+        <div class="modal-content">
+          <h4>Add Product</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="code" name="code" class="validate" required />
+                  <label for="code">Product code</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="name" name="name" class="input-field validate" required />
+                  <label for="name">Product Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <textarea id="description" name="description" class="materialize-textarea validate" required></textarea>
+                  <label for="description">Product Description</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6 input-field">
+                  <input id="amount" name="amount" class="validate" type="number" required />
+                  <label for="amount">Product Amount</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">payments</i>
+                  <input id="price" name="price" class="validate" type="number" required />
+                  <label for="price">Product Price</label>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="waves-effect waves-light btn-large" type="submit" >Add product</button>
+          <button id="add_modal_close" href="#!" class="modal-close waves-effect waves-green btn-flat is-hidden">Agree</button>
+        </div>
+      </form>
+    </div>
+    <div id="del" class="modal">
+      <form id="delete_form" action="#">
+        <div class="modal-content">
+          <h4>Add Product</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="code" name="code" class="validate" required />
+                  <label for="code">Product code</label>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="waves-effect waves-light btn-large red" type="submit" >Delete product</button>
+          <button id="delete_modal_close" href="#!" class="modal-close waves-effect waves-green btn-flat is-hidden">Agree</button>
+        </div>
+      </form>
+    </div>
+    <div id="search" class="modal">
+      <form id="search_form" action="#">
+        <div class="modal-content">
+          <h4>Search Product</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="code" name="code" class="validate" required />
+                  <label for="code">Product code</label>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="waves-effect waves-light btn-large" type="submit" >Search product</button>
+          <button id="search_modal_close" href="#!" class="modal-close waves-effect waves-green btn-flat is-hidden">Agree</button>
+        </div>
+      </form>
+    </div>
+    <div id="position" class="modal">
+      <form id="position_form" action="#">
+        <div class="modal-content">
+          <h4>Add Product</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="code" name="code" class="validate" required />
+                  <label for="code">Product code</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="name" name="name" class="input-field validate" required />
+                  <label for="name">Product Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <textarea id="description" name="description" class="materialize-textarea validate" required></textarea>
+                  <label for="description">Product Description</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6 input-field">
+                  <input id="amount" name="amount" class="validate" type="number" required />
+                  <label for="amount">Product Amount</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">payments</i>
+                  <input id="price" name="price" class="validate" type="number" required />
+                  <label for="price">Product Price</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="pos" name="pos" class="validate" type="number" required />
+                  <label for="pos">Position</label>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="waves-effect waves-light btn-large" type="submit" >Add product</button>
+          <button id="position_modal_close" href="#!" class="modal-close waves-effect waves-green btn-flat is-hidden">Agree</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./index.js" type="module" ></script>
+</body>
+</html>
